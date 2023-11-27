@@ -71,3 +71,18 @@ module.exports.postUserRegister = (req,res,next)=>{
 
     
   }
+
+
+  module.exports.postUserLogout = (req, res) => {
+    // Oturumu sonlandır
+    req.logout(function(err) {
+        if (err) {
+            // Hata işleme
+            console.error('Logout hatası:', err);
+            return next(err); // Hata durumunda middleware zincirini sonlandırma
+        }
+
+        // İsteği ve yanıtı yönlendirme veya başka bir işlem yapma
+        res.redirect('/'); // Örneğin, ana sayfaya yönlendirme
+    });
+}

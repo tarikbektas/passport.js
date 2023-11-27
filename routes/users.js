@@ -18,6 +18,7 @@ routes.get('/login',userController.getUserLogin)
 routes.get('/register',userController.getUserRegister)
 
 routes.post('/login',userController.postUserLogin)
+routes.post('/logout',userController.postUserLogout)
 
 routes.post('/register',userController.postUserRegister)
 

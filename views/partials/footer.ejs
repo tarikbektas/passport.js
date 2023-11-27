@@ -1,1 +1,22 @@
-<h6> footer</h6>
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        // Sunucuya logout isteği gönderme (örneğin, fetch veya AJAX kullanabilirsiniz)
+        fetch('/logout', {
+            method: 'GET',
+            credentials: 'same-origin' // Oturum bilgilerini paylaş
+        })
+        .then(response => {
+            if (response.ok) {
+                // Logout başarılıysa sayfayı yenileme veya başka bir işlem yapma
+                window.location.reload(); // Sayfayı yenileme örneği
+            } else {
+                // Logout başarısızsa hata işleme
+                console.error('Logout başarısız.');
+            }
+        })
+        .catch(error => {
+            console.error('Logout hatası:', error);
+        });
+    });
+    </script>
+    

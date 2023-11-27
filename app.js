@@ -32,8 +32,7 @@ app.use((req,res,next)=>{
     
     res.locals.succsess = req.flash('loginsuccess')
     res.locals.passportFailure = req.flash('error')
-   res.locals.passportSuccess=req.flash('success')
-    console.log("user bilgisi",req.user)
+    res.locals.passportSuccess=req.flash('success')
     res.locals.user = req.user
 
       next()
